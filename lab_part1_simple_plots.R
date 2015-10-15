@@ -8,7 +8,10 @@ library(ggplot2)
 data(economics)
 ## задача 1. Цвет заполнения тоже сделайте зеленым и красным. Заглавие графика: 
 ## Доля безработных жителей США. Заглавие оси у: количество жителей [тыс.]
-ggplot(data=economics,aes(x=date)) + 
-  geom_area(aes(y=pop),col=I("green")) + geom_area(aes(y=unemploy),col=I("red"))
 
+ggplot(data=economics,aes(x=date)) + 
+  geom_area(aes(y=pop),col=I("green"),fill=I("green"),alpha=0.5) + geom_area(aes(y=unemploy),col=I("red"),fill=I("red"))+
+  ylab("количество жителей [тыс.]")+
+  ggtitle("Доля безработных жителей США")
+  
 
